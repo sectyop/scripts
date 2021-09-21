@@ -17,7 +17,7 @@ library(tidyverse)
 
 # Obtengo el ID del que quiero utilizar
 
-drive_auth(email = "nacho.ls@gmail.com")
+drive_auth(email = "datos.ssgm@gmail.com")
 
 id_alcoholemia = drive_get("Planilla Alcoholemia")
 id_alcoholemia = id_alcoholemia$id
@@ -258,7 +258,7 @@ fwrite(consolidado_dia, salida, append = FALSE, row.names = FALSE, col.names = T
 
 # Escribo status ejecución en hoja "Status Datos SSGM"
 # --------------------------------------------------------------------------------
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
