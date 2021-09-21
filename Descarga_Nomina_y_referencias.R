@@ -222,7 +222,7 @@ drive_download(
   path = path_,
   overwrite = TRUE)
 
-nuevos_codigos = fread("W:\\Agentes Viales\\Ref\\nuevas_codigos.txt",
+nuevos_codigos = fread("W:\\Agentes Viales\\Ref\\nuevos_codigos.txt",
                        header = FALSE)
 
 if(nrow(nuevos_codigos) == 0){
