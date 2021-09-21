@@ -86,7 +86,7 @@ if (length(lista_tablas) > 1){
   codigos = codigos[is.na(codigos$Contrato),]
   codigos = as.data.frame(codigos$Codigos)
   
-  nuevos_codigos = "W:\\Agentes Viales\\Ref\\nuevas_codigos.txt"
+  nuevos_codigos = "W:\\Agentes Viales\\Ref\\nuevos_codigos.txt"
   fwrite(codigos, nuevos_codigos, append = FALSE, row.names = FALSE, col.names = FALSE)
   # Listo.........................................................................................
 
@@ -268,8 +268,8 @@ if (length(lista_tablas) > 1){
   dia = as.character(str_pad(day(ahora), 2, pad = "0"))
   
   fecha = paste(anio, mes, dia, "_", sep = "")
-  file_out = paste(fecha, "Nomina_CAT_test.txt", sep="")
-  file_out2 = "Nomina_CAT_Actual_test.txt"
+  file_out = paste(fecha, "Nomina_CAT.txt", sep="")
+  file_out2 = "Nomina_CAT_Actual.txt"
   
   
   directorio_out = "W:\\Agentes Viales\\Nomina\\Bajadas_Nomina\\"
