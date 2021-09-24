@@ -13,10 +13,11 @@ library(dplyr)
 
 directorio = "W:\\Agentes Viales\\No Programados\\"
 setwd(directorio)
-drive_auth(email = "nacho.ls@gmail.com")
+drive_auth(email = "datos.ssgm@gmail.com")
 
 # Descargamos la base desde el Google Drive
-id_snp = drive_get("Registro Diario CGM - CUCC")$id
+#id_snp = drive_get("Registro Diario CGM - CUCC")$id
+id_snp = "1mxzFn0PjGxVGTgmtrvDa7LIUFoynQ6_1f4sHbx102Mw"
 archivo = as_id(id_snp)
 nombre_archivo = "Registro Diario CGM - CUCC.xlsx"
 
@@ -227,7 +228,7 @@ fwrite(data_final, salida, append = FALSE, row.names = FALSE, col.names = TRUE, 
 
 # Escribo status ejecución en hoja "Status Datos SSGM"
 # --------------------------------------------------------------------------------
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
