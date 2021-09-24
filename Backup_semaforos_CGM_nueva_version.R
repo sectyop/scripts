@@ -3,7 +3,7 @@ rm(list=ls())
 gc()
 Sys.time()
 
-# Cargo librerÌas
+# Cargo librer√≠as
 library(lubridate)
 library(data.table)
 library(readxl)
@@ -23,7 +23,7 @@ hoy = today()
   drive_auth(email = "datos.ssgm@gmail.com")
   gs4_auth(email = "datos.ssgm@gmail.com")
   
-  #id_semaforos = drive_get("PLANILLA SEM¡FOROS CAT/CGM - PRUEBA 2")$id
+  #id_semaforos = drive_get("PLANILLA SEM√ÅFOROS CAT/CGM - PRUEBA 2")$id
   #id_semaforos = "19r3XwQvET1i4M2ZR_07MLn-uEosUb2bSYlDDxwK5s8c"
   #esta anterior es la planilla vieja que se deja de usar el 01/07/2021
   id_semaforos = "1iN0U4NIVAaoY8lun060dhKrAoTeu08cWF8PXLDWQNgI"
@@ -42,14 +42,14 @@ hoy = today()
   # Leo el archivo
   data_temp = read_xlsx(path = path_,
                         .name_repair = "unique",
-                        sheet = "MONITOREO Y GESTI”N",
+                        sheet = "MONITOREO Y GESTI√ìN",
                         #col_types = clases,
                         skip = 9)
   
-  # Selecciono el rango H-AM (columnas 8 a 39) y solo las filas no vacÌas
+  # Selecciono el rango H-AM (columnas 8 a 39) y solo las filas no vac√≠as
   data_temp = data_temp[which(!is.na(data_temp$`INICIO SUCESO`)), (8:39)]
   
-  # Para el acumulado anexado, me quedo ˙nicamente los cerrados
+  # Para el acumulado anexado, me quedo √∫nicamente los cerrados
   data_temp_acum = data_temp[which(data_temp$`ESTADO SUCESO` == "Cerrado"),]
   
   # Calculo la hora y fecha y agrego la columna
@@ -70,7 +70,7 @@ hoy = today()
   
   salida = paste(directorio_out, file_out, sep = "")
   
-  # --- Abro el histÛrico
+  # --- Abro el hist√≥rico
   
   historico_acum = fread(salida,
                          encoding = 'UTF-8',
@@ -81,9 +81,9 @@ hoy = today()
   historico_acum$`HORA RETIRO CAT` = as.character(historico_acum$`HORA RETIRO CAT`)
   historico_acum$`FIN SUCESO` = as.character(historico_acum$`FIN SUCESO`)
   historico_acum$`HORA ORDEN CONF` = as.character(historico_acum$`HORA ORDEN CONF`)
-  # historico_acum$`MEDIO COMUNICACI”N` = as.character(historico_acum$`MEDIO COMUNICACI”N`)
+  # historico_acum$`MEDIO COMUNICACI√ìN` = as.character(historico_acum$`MEDIO COMUNICACI√ìN`)
   # historico_acum$`BASE ASIGNADA`= as.character(historico_acum$`BASE ASIGNADA`)
-  # historico_acum$`C¡MARAS LÕNEAS` = as.numeric(historico_acum$`C¡MARAS LÕNEAS`)
+  # historico_acum$`C√ÅMARAS L√çNEAS` = as.numeric(historico_acum$`C√ÅMARAS L√çNEAS`)
 
   data_temp_acum$`HORA LLEGADA CAT` = as.character(data_temp_acum$`HORA LLEGADA CAT`)
   data_temp_acum$`HORA RETIRO CAT` = as.character(data_temp_acum$`HORA RETIRO CAT`)
@@ -116,8 +116,8 @@ hoy = today()
   # )
   #historico_acum = rbind(historico_acum, data_temp_acum)
   
-  data_temp_acum$`DESCRIPCI”N DE SUCESO` = substr(data_temp_acum$`DESCRIPCI”N DE SUCESO`, start = 1, stop = 50)
-  historico_acum$`DESCRIPCI”N DE SUCESO` = substr(historico_acum$`DESCRIPCI”N DE SUCESO`, start = 1, stop = 50)
+  data_temp_acum$`DESCRIPCI√ìN DE SUCESO` = substr(data_temp_acum$`DESCRIPCI√ìN DE SUCESO`, start = 1, stop = 50)
+  historico_acum$`DESCRIPCI√ìN DE SUCESO` = substr(historico_acum$`DESCRIPCI√ìN DE SUCESO`, start = 1, stop = 50)
   historico_final = rbind(historico_acum, data_temp_acum)
   
   # agregar = c("ESTADO AGENTES", "ESTADO SUCESO")
@@ -166,14 +166,14 @@ hoy = today()
     range_write(
       ss = id_semaforos,
       data = df_hora_guardado,
-      sheet = 'MONITOREO Y GESTI”N',
+      sheet = 'MONITOREO Y GESTI√ìN',
       range = 'R1:R2',
       col_names = TRUE,
       reformat = FALSE
     )
   }, error=function(e){})
   
-  # Vamos a procesar la hoja "Base de datos" donde est·n geolocalizados los cruces semafÛricos
+  # Vamos a procesar la hoja "Base de datos" donde est√°n geolocalizados los cruces semaf√≥ricos
   
   # Leo el archivo
   
@@ -200,8 +200,8 @@ hoy = today()
   fwrite(data_geo, salida3, append = FALSE, row.names = FALSE, col.names = TRUE, sep = "\t")
   
   
-  # Escribo status ejecuciÛn en hoja "Status Datos SSGM"
-  gs4_auth(email = "nacho.ls@gmail.com")
+  # Escribo status ejecuci√≥n en hoja "Status Datos SSGM"
+  gs4_auth(email = "datos.ssgm@gmail.com")
   id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
   df_hora_guardado = as.data.frame(Sys.time() - hours(3))
   colnames(df_hora_guardado) = "FechaHoraActual"
