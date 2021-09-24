@@ -20,8 +20,8 @@ hoy = today()
   setwd(directorio)
   
   # Descargamos la base desde el Google Drive
-  drive_auth(email = "nacho.ls@gmail.com")
-  gs4_auth(email = "nacho.ls@gmail.com")
+  drive_auth(email = "datos.ssgm@gmail.com")
+  gs4_auth(email = "datos.ssgm@gmail.com")
   
   #id_semaforos = drive_get("PLANILLA SEMÁFOROS CAT/CGM - PRUEBA 2")$id
   #id_semaforos = "19r3XwQvET1i4M2ZR_07MLn-uEosUb2bSYlDDxwK5s8c"
