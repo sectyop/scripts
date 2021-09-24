@@ -13,6 +13,7 @@ file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQFXa7cH4N6bVMsKCBu9ibL3
 
 base = read.csv(file,
                 encoding = 'UTF-8')
+
 ahora = Sys.time()
 fecha = substr(as.character(ahora),1,10)
 fecha = gsub("-", "", fecha)
@@ -98,7 +99,7 @@ fwrite(data_out, salida, append = FALSE, row.names = FALSE, col.names = TRUE, se
 # --------------------------------------------------------------------------------
 library(googlesheets4)
 
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
