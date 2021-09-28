@@ -9,7 +9,7 @@ rm(list=ls())
 gc()
 Sys.time()
 
-# Cargo librer�as
+# Cargo librerías
 library(lubridate)
 library(data.table)
 library(dplyr)
@@ -28,10 +28,10 @@ file = "Abonos.csv"
 abonos = fread(file,
                encoding = 'UTF-8')
 
-# Corrigo valores que viene con p�simo encoding
+# Corrigo valores que viene con pésimo encoding
 #table(abonos$`Plan Name`)
-abonos$`Plan Name`[abonos$`Plan Name` == "viaje único"] = "viaje �nico"
-abonos$`Plan Name`[abonos$`Plan Name` == "básico"] = "basico"
+abonos$`Plan Name`[abonos$`Plan Name` == "viaje Ãºnico"] = "viaje único"
+abonos$`Plan Name`[abonos$`Plan Name` == "bÃ¡sico"] = "basico"
 
 #abonos = read_xlsx(
 #  file,
@@ -71,9 +71,9 @@ fwrite(abonos, salida, append = FALSE, row.names = FALSE, col.names = TRUE, sep 
 
 
 
-# Escribo status ejecuci�n en hoja "Status Datos SSGM"
+# Escribo status ejecución en hoja "Status Datos SSGM"
 # --------------------------------------------------------------------------------
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
