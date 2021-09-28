@@ -197,7 +197,6 @@ base$para_liniers = ifelse(base$para_liniers == "SI",
 base$fecha_ingreso_caba = ymd_hms(base$fecha_ingreso_caba)
 base$fecha_egreso_caba = ymd_hms(base$fecha_egreso_caba)
 
-base = base[which(base$email != "nacho.ls@gmail.com"),]
 
 # Guardo el archivo de salida
 nombre_salida = "Solicitudes_Procesado.txt"
