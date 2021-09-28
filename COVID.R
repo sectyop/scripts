@@ -88,12 +88,12 @@ fwrite(casos_caba, salida_CABA, append = FALSE, row.names = FALSE, col.names = T
 fwrite(casos, salida_TOTAL, append = FALSE, row.names = FALSE, col.names = TRUE, sep = "\t")
 fwrite(vacunas_agrupado, salida_vacunas, append = FALSE, row.names = FALSE, col.names = TRUE, sep = "\t")
 
-# Escribo status ejecución en hoja "Status Datos SSGM"
+# Escribo status ejecuciÃ³n en hoja "Status Datos SSGM"
 # --------------------------------------------------------------------------------
 library(googlesheets4)
 library(lubridate)
 
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
