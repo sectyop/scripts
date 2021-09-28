@@ -256,7 +256,7 @@ fwrite(data_merge, salida, append = FALSE, row.names = FALSE, col.names = TRUE, 
 # --------------------------------------------------------------------------------
 library(googlesheets4)
 
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
