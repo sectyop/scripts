@@ -3,7 +3,7 @@ rm(list=ls())
 gc()
 Sys.time()
 
-# Instalación condicional de paquetes
+# InstalaciÃ³n condicional de paquetes
 
 # Package names
 packages <- c("dplyr", "jsonlite", "lubridate", "data.table", "googlesheets4", "httr")
@@ -49,7 +49,7 @@ df = cbind(df, df2)
 df$bajada = now() - hours(3)
 
 # Guardo el archivo
-# Almaceno los últimos 6 meses de datos
+# Almaceno los Ãºltimos 6 meses de datos
 fecha_corte = today() - months(6)
 
 file_out = paste("stationStatus.txt", sep="")
@@ -136,9 +136,9 @@ fwrite(historico,
        #na = 0,
        sep = "\t")
 
-# Escribo status ejecución en hoja "Status Datos SSGM"
+# Escribo status ejecuciÃ³n en hoja "Status Datos SSGM"
 # --------------------------------------------------------------------------------
-gs4_auth(email = "nacho.ls@gmail.com")
+gs4_auth(email = "datos.ssgm@gmail.com")
 id_status = "1BwZjmRPRaFahxI8eWwU6EXAqsSUj7OU2_xWe6KT9u2Y"
 df_hora_guardado = as.data.frame(Sys.time() - hours(3))
 colnames(df_hora_guardado) = "FechaHoraActual"
